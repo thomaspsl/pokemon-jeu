@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 813b8b71a58a4476687f0bd95b22150a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7922819117002849157
+    second: Tauros_0
+  - first:
+      213: -7654550057893587635
+    second: Tauros_1
+  - first:
+      213: 8045913318740265935
+    second: Tauros_2
+  - first:
+      213: -457838885238947427
+    second: Tauros_3
+  - first:
+      213: -2700333977620758341
+    second: Tauros_4
+  - first:
+      213: -8897822737918789042
+    second: Tauros_5
+  - first:
+      213: 6508630106185621136
+    second: Tauros_6
+  - first:
+      213: -5494675076820209851
+    second: Tauros_7
+  - first:
+      213: -1872067854814206405
+    second: Tauros_8
+  - first:
+      213: 5193981754237403587
+    second: Tauros_9
+  - first:
+      213: -2266322751578906092
+    second: Tauros_10
+  - first:
+      213: -2442222202901327629
+    second: Tauros_11
+  - first:
+      213: 8225965075350262874
+    second: Tauros_12
+  - first:
+      213: -1676306230350061871
+    second: Tauros_13
+  - first:
+      213: 1268550268548867738
+    second: Tauros_14
+  - first:
+      213: -131755265022688583
+    second: Tauros_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tauros_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 198
+        width: 43
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b740f5f6dfd7c0290800000000000000
+      internalID: -7922819117002849157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 195
+        width: 43
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d459ec3274395c590800000000000000
+      internalID: -7654550057893587635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 197
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb0919c883d8af60800000000000000
+      internalID: 8045913318740265935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 195
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91c8f8a5fd65a9f0800000000000000
+      internalID: -457838885238947427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 132
+        width: 63
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb04ff8ed8c768ad0800000000000000
+      internalID: -2700333977620758341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 131
+        width: 63
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4af4ffcc55948480800000000000000
+      internalID: -8897822737918789042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_6
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 133
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e5b9de89c435a50800000000000000
+      internalID: 6508630106185621136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_7
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 131
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f60f1312efeb3b0800000000000000
+      internalID: -5494675076820209851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b362f5664341506e0800000000000000
+      internalID: -1872067854814206405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 67
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c14e27f2eab41840800000000000000
+      internalID: 5193981754237403587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 68
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412e0c507776c80e0800000000000000
+      internalID: -2266322751578906092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_11
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 67
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f09e7d88db7b1ed0800000000000000
+      internalID: -2442222202901327629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 5
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a54950b27af782270800000000000000
+      internalID: 8225965075350262874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_13
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ded53d6d509cb8e0800000000000000
+      internalID: -1676306230350061871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 4
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a96e4988fbbca9110800000000000000
+      internalID: 1268550268548867738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tauros_15
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 4
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b20907d849eb2ef0800000000000000
+      internalID: -131755265022688583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tauros_0: -7922819117002849157
+      Tauros_1: -7654550057893587635
+      Tauros_10: -2266322751578906092
+      Tauros_11: -2442222202901327629
+      Tauros_12: 8225965075350262874
+      Tauros_13: -1676306230350061871
+      Tauros_14: 1268550268548867738
+      Tauros_15: -131755265022688583
+      Tauros_2: 8045913318740265935
+      Tauros_3: -457838885238947427
+      Tauros_4: -2700333977620758341
+      Tauros_5: -8897822737918789042
+      Tauros_6: 6508630106185621136
+      Tauros_7: -5494675076820209851
+      Tauros_8: -1872067854814206405
+      Tauros_9: 5193981754237403587
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

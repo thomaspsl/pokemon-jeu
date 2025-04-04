@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 3ddeea2069bee4641a1f823c922281b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2805427200457913060
+    second: Carabaffe_0
+  - first:
+      213: 5653787912029059026
+    second: Carabaffe_1
+  - first:
+      213: -8894636990566651240
+    second: Carabaffe_2
+  - first:
+      213: -2826452012678018513
+    second: Carabaffe_3
+  - first:
+      213: -937274453020401353
+    second: Carabaffe_4
+  - first:
+      213: 599253390399719158
+    second: Carabaffe_5
+  - first:
+      213: 5369213507162299078
+    second: Carabaffe_6
+  - first:
+      213: 6145359356263857622
+    second: Carabaffe_7
+  - first:
+      213: -1947986328123858763
+    second: Carabaffe_8
+  - first:
+      213: -4792268329078391690
+    second: Carabaffe_9
+  - first:
+      213: -7096139725864394372
+    second: Carabaffe_10
+  - first:
+      213: -5768545800179314677
+    second: Carabaffe_11
+  - first:
+      213: 6748116919693601055
+    second: Carabaffe_12
+  - first:
+      213: -951191996525513764
+    second: Carabaffe_13
+  - first:
+      213: -9031938434306518397
+    second: Carabaffe_14
+  - first:
+      213: 6388487720831280477
+    second: Carabaffe_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Carabaffe_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 202
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1dcc7133de1119d0800000000000000
+      internalID: -2805427200457913060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 200
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7b3e3a62a467e40800000000000000
+      internalID: 5653787912029059026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 202
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89aa93b68c6ef8480800000000000000
+      internalID: -8894636990566651240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 200
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a83a1aedc66c8d0800000000000000
+      internalID: -2826452012678018513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 138
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731aba2d9d12ef2f0800000000000000
+      internalID: -937274453020401353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 136
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6493998c9f05800800000000000000
+      internalID: 599253390399719158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 138
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca53a9cc37438a40800000000000000
+      internalID: 5369213507162299078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 136
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddfa3766c3b84550800000000000000
+      internalID: 6145359356263857622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 75
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b02cd461cc57f4e0800000000000000
+      internalID: -1947986328123858763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 73
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c7de068517e7db0800000000000000
+      internalID: -4792268329078391690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_10
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 74
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71a05b2482758d90800000000000000
+      internalID: -7096139725864394372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 73
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b009db5682202ffa0800000000000000
+      internalID: -5768545800179314677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 10
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19e32dd59026ad50800000000000000
+      internalID: 6748116919693601055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 9
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3f6e53befacc2f0800000000000000
+      internalID: -951191996525513764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 10
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38256f5e8db18a280800000000000000
+      internalID: -9031938434306518397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carabaffe_15
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 9
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55e7140cb778a850800000000000000
+      internalID: 6388487720831280477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Carabaffe_0: -2805427200457913060
+      Carabaffe_1: 5653787912029059026
+      Carabaffe_10: -7096139725864394372
+      Carabaffe_11: -5768545800179314677
+      Carabaffe_12: 6748116919693601055
+      Carabaffe_13: -951191996525513764
+      Carabaffe_14: -9031938434306518397
+      Carabaffe_15: 6388487720831280477
+      Carabaffe_2: -8894636990566651240
+      Carabaffe_3: -2826452012678018513
+      Carabaffe_4: -937274453020401353
+      Carabaffe_5: 599253390399719158
+      Carabaffe_6: 5369213507162299078
+      Carabaffe_7: 6145359356263857622
+      Carabaffe_8: -1947986328123858763
+      Carabaffe_9: -4792268329078391690
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

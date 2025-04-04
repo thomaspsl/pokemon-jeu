@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: bcd86a7467d5841abacbfa54890f4ae5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2873382479708119325
+    second: Papilusion_0
+  - first:
+      213: -3549675046067907311
+    second: Papilusion_1
+  - first:
+      213: -7945337395320512496
+    second: Papilusion_2
+  - first:
+      213: -1856790033642921441
+    second: Papilusion_3
+  - first:
+      213: -3401495129575431580
+    second: Papilusion_4
+  - first:
+      213: 2779454114869296206
+    second: Papilusion_5
+  - first:
+      213: -6585256792574679904
+    second: Papilusion_6
+  - first:
+      213: 7522074487940176033
+    second: Papilusion_7
+  - first:
+      213: -7213242750324815198
+    second: Papilusion_8
+  - first:
+      213: -1652077901339395436
+    second: Papilusion_9
+  - first:
+      213: 5938699584800872130
+    second: Papilusion_10
+  - first:
+      213: -144307826581753855
+    second: Papilusion_11
+  - first:
+      213: 3478407025363260348
+    second: Papilusion_12
+  - first:
+      213: 574962295935436177
+    second: Papilusion_13
+  - first:
+      213: -898441098182896912
+    second: Papilusion_14
+  - first:
+      213: -3534411050367038711
+    second: Papilusion_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Papilusion_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 199
+        width: 53
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1165d6342e40e720800000000000000
+      internalID: 2873382479708119325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 199
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115dd034a550dbec0800000000000000
+      internalID: -3549675046067907311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 199
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0102b433cbd7cb190800000000000000
+      internalID: -7945337395320512496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 199
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f126a365d4b5b36e0800000000000000
+      internalID: -1856790033642921441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 135
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4626f6893367bc0d0800000000000000
+      internalID: -3401495129575431580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 135
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c38429aca929620800000000000000
+      internalID: 2779454114869296206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 135
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4abdb56d77c94a0800000000000000
+      internalID: -6585256792574679904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 135
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8d3b3a4e6c36860800000000000000
+      internalID: 7522074487940176033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 71
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa4a3c9fe965eb90800000000000000
+      internalID: -7213242750324815198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 71
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a746dd6e3a219e0800000000000000
+      internalID: -1652077901339395436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_10
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 71
+        width: 46
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6d0dbcecf7a6250800000000000000
+      internalID: 5938699584800872130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_11
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 71
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100394adbc05ffdf0800000000000000
+      internalID: -144307826581753855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3100b92c8c54030800000000000000
+      internalID: 3478407025363260348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 7
+        width: 66
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1958970792daaf700800000000000000
+      internalID: 574962295935436177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_14
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 8
+        width: 53
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f25233d4981883f0800000000000000
+      internalID: -898441098182896912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Papilusion_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 6
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b48a430ef33fec0800000000000000
+      internalID: -3534411050367038711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Papilusion_0: 2873382479708119325
+      Papilusion_1: -3549675046067907311
+      Papilusion_10: 5938699584800872130
+      Papilusion_11: -144307826581753855
+      Papilusion_12: 3478407025363260348
+      Papilusion_13: 574962295935436177
+      Papilusion_14: -898441098182896912
+      Papilusion_15: -3534411050367038711
+      Papilusion_2: -7945337395320512496
+      Papilusion_3: -1856790033642921441
+      Papilusion_4: -3401495129575431580
+      Papilusion_5: 2779454114869296206
+      Papilusion_6: -6585256792574679904
+      Papilusion_7: 7522074487940176033
+      Papilusion_8: -7213242750324815198
+      Papilusion_9: -1652077901339395436
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
