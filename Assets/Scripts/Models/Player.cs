@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5f;
+    [Header("Player")]
+    public float Speed = 5f;
 
-    private Animator _animator;
-    private Vector2 _movement;
-    private Rigidbody2D _rigidbody2D;
+    [Header("Pokeball")]
+    public Pokeball PokeballPrefab;
+    public float PokeballSpeed = 10f;
 
-    [Header("Pokéball Settings")]
-    public GameObject pokeballPrefab; // Référence au prefab de la Pokéball
-    public float pokeballSpeed = 10f; // Vitesse de la Pokéball
+    // Propriétés
+    private Animator Animator { get; set; }
+    public Rigidbody2D Rigidbody { get; private set; }
+    private Vector2 Movement { get; set; }
 
     private void Awake()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        this.Animator = GetComponent<Animator>();
+        this.Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -23,31 +25,29 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        _movement = new Vector2(horizontal, vertical).normalized;
+        this.Movement = new Vector2(horizontal, vertical).normalized;
 
-        _animator.SetFloat("Horizontal", horizontal);
-        _animator.SetFloat("Vertical", vertical);
-        _animator.SetFloat("Velocity", _movement.sqrMagnitude);
+        this.Animator.SetFloat("Horizontal", horizontal);
+        this.Animator.SetFloat("Vertical", vertical);
+        this.Animator.SetFloat("Velocity", this.Movement.sqrMagnitude);
 
         if (Input.GetMouseButtonDown(0)) ThrowPokeball();
     }
 
     private void FixedUpdate()
     {
-        _rigidbody2D.linearVelocity = _movement * speed;
+        this.Rigidbody.linearVelocity = this.Movement * this.Speed;
     }
 
     void ThrowPokeball()
     {
-        if (pokeballPrefab == null) return;
+        if (this.PokeballPrefab == null) return;
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f;
 
         Vector2 direction = (mousePosition - transform.position).normalized;
-        GameObject pokeball = Instantiate(pokeballPrefab, transform.position, Quaternion.identity);
-
-        Rigidbody2D rb = pokeball.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.linearVelocity = direction * pokeballSpeed;
+        Pokeball pokeball = Instantiate(this.PokeballPrefab, transform.position, Quaternion.identity);
+        pokeball.Rigidbody.linearVelocity = direction * this.PokeballSpeed;
     }
 }

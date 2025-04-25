@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 897264848167547944}
   - component: {fileID: 5987233278052698949}
-  - component: {fileID: 4942022104882721701}
   - component: {fileID: 5025087022077700436}
   - component: {fileID: 3213069821957617494}
+  - component: {fileID: 4942022104882721701}
   - component: {fileID: 6936416166919232469}
   m_Layer: 6
   m_Name: Player
@@ -91,22 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4942022104882721701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6365126790470622977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22cc8d2d9772e47dfbbea980d77a6daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movement: {x: 0, y: 0}
-  speed: 5
-  pokeballPrefab: {fileID: 8826106453522760034, guid: 0c9b72fb568e247528fae13d4bbeb562, type: 3}
-  pokeballSpeed: 10
 --- !u!50 &5025087022077700436
 Rigidbody2D:
   serializedVersion: 5
@@ -170,6 +154,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.0077894377}
   m_Radius: 0.20066756
+--- !u!114 &4942022104882721701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365126790470622977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22cc8d2d9772e47dfbbea980d77a6daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  PokeballPrefab: {fileID: -6053458012482149382, guid: 5ea4a27a0d17c48cb9af3dce3494c6cb, type: 3}
+  PokeballSpeed: 10
 --- !u!95 &6936416166919232469
 Animator:
   serializedVersion: 7

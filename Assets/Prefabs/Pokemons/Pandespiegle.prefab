@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5352076107150373908}
   - component: {fileID: 3900321276391653823}
   - component: {fileID: 6068449619626229518}
+  - component: {fileID: 378052168899139139}
   m_Layer: 7
   m_Name: Pandespiegle
   m_TagString: Pokemon
@@ -106,7 +107,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41b0b3b2357c94f4cbefdf6e0ff81e2c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -165,6 +166,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b5692e5f2904d7b84a5f8f3cd25e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  luck: 60
-  speed: 5
-  score: 100
+  Luck: 50
+  Speed: 5
+  Score: 100
+--- !u!95 &378052168899139139
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630889257004747743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d04dd32b337d40c195d77cfa519fa1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

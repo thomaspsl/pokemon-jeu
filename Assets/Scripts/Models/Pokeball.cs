@@ -3,16 +3,37 @@ using UnityEngine;
 
 public class Pokeball : MonoBehaviour
 {
+    [Header("Pokemon")]
     public Color capturedColor = Color.gray;
+
+    // Propriétés
+    private CapsuleCollider2D Collider { get; set; }
+    private SpriteRenderer SpriteRenderer { get; set; }
+    public Rigidbody2D Rigidbody { get; private set; }
+
+    private void Awake()
+    {
+        this.Collider = GetComponent<CapsuleCollider2D>();
+        this.SpriteRenderer = GetComponent<SpriteRenderer>();
+        this.Rigidbody = GetComponent<Rigidbody2D>();
+    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null) rb.linearVelocity = Vector2.zero;
+        if (this.Rigidbody != null) this.Rigidbody.linearVelocity = Vector2.zero;
 
         if (other.gameObject.CompareTag("Pokemon"))
         {
-            StartCoroutine(CaptureAnimation(gameObject, other));
+            Pokemon pokemon = other.gameObject.GetComponent<Pokemon>();
+
+            // Déjà entrain de se faire capturer
+            if (pokemon.IsBeingCaptured) { 
+                Destroy(gameObject); 
+                return; 
+            }
+
+            pokemon.IsBeingCaptured = true;
+            StartCoroutine(CaptureAnimation(pokemon));
         }
         else
         {
@@ -20,46 +41,43 @@ public class Pokeball : MonoBehaviour
         }
     }
 
-    private IEnumerator CaptureAnimation(GameObject pokeball, Collision2D other)
+    private IEnumerator CaptureAnimation(Pokemon pokemon)
     {
-        GameObject pokemon = other.gameObject;
-        Rigidbody2D pokemonRb = pokemon.GetComponent<Rigidbody2D>();
-        if (pokemonRb != null) pokemonRb.bodyType = RigidbodyType2D.Static;
-
-        // Déplace la pokeball sur le Pokémon
         transform.position = pokemon.transform.position;
+        pokemon.SpriteRenderer.enabled = false;
+        if (pokemon.Rigidbody != null) pokemon.Rigidbody.bodyType = RigidbodyType2D.Static;
+        if (pokemon.Collider != null) pokemon.Collider.enabled = false;
 
-        // Génère une proba entre 1 et 3 (pondérée)
         int tries = GenerateWeightedTry();
+
+        this.Collider.enabled = false;
 
         for (int i = 0; i < tries; i++)
         {
-            pokeball.GetComponent<CapsuleCollider2D>().enabled = false;
-            pokemon.GetComponent<SpriteRenderer>().enabled = false;
             yield return StartCoroutine(Shake());
         }
 
         if (tries == 3)
         {
-            Destroy(pokemon);
-            pokeball.GetComponent<CapsuleCollider2D>().enabled = true;
-            pokeball.GetComponent<SpriteRenderer>().color = capturedColor;
-            Debug.Log("Pokémon capturé !");
+            Destroy(pokemon.gameObject);
+            gameObject.layer = LayerMask.NameToLayer("Default");
+            this.SpriteRenderer.color = this.capturedColor;
+            yield return StartCoroutine(FadeOutAndDestroy());
         }
         else
         {
-            Debug.Log("Le Pokémon s’est échappé !");
-            Destroy(pokeball);
-            pokemon.GetComponent<SpriteRenderer>().enabled = true;
+            Destroy(gameObject);
+            pokemon.RestartMovement();
         }
     }
 
     private IEnumerator Shake()
     {
         Vector3 start = transform.position;
+        
         float duration = 0.2f;
         float elapsed = 0f;
-        float shakeAmount = 0.2f;
+        float shakeAmount = 0.1f;
 
         while (elapsed < duration)
         {
@@ -70,14 +88,35 @@ public class Pokeball : MonoBehaviour
         }
 
         transform.position = start;
+
         yield return new WaitForSeconds(0.3f);
+    }
+
+    private IEnumerator FadeOutAndDestroy()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Color originalColor = this.SpriteRenderer.color;
+        float duration = 1.0f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+            this.SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        this.SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
+        Destroy(gameObject);
     }
 
     private int GenerateWeightedTry()
     {
         float r = Random.value;
-        if (r < 0.25f) return 1;         // 25% chance
-        else if (r < 0.50f) return 2;   // 25% chance
-        else return 3;                 // 50% chance
+        if (r < 0.25f) return 1;
+        else if (r < 0.50f) return 2;
+        else return 3;
     }
 }

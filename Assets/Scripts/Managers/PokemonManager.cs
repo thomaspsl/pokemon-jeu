@@ -10,9 +10,9 @@ public class PokemonManager : MonoBehaviour
     public float spawnDelay = 2f;
     public List<Pokemon> pokemonList = new List<Pokemon>();
 
-    private List<Pokemon> _pokemons = new List<Pokemon>();
     private Coroutine _spawnRoutine;
     public event Action<Pokemon> OnCollected;
+    private List<Pokemon> _pokemons = new List<Pokemon>();
 
     public void StartSpawning()
     {
@@ -28,11 +28,10 @@ public class PokemonManager : MonoBehaviour
 
     private void Spawn()
     {
-        // var data = pokemonList[UnityEngine.Random.Range(0, pokemonList.Count)];
-        // var pokemon = Instantiate(data, spawner.position, Quaternion.identity);
-        // pokemon.transform.parent = container;
-        // pokemon.Data = data;
-        // AddPokemon(pokemon);
+        var prefab = pokemonList[UnityEngine.Random.Range(0, pokemonList.Count)];
+        var pokemon = Instantiate(prefab, spawner.position, Quaternion.identity);
+        pokemon.transform.parent = container;
+        AddPokemon(pokemon);
     }
 
     private IEnumerator SpawnRoutine()
@@ -44,13 +43,13 @@ public class PokemonManager : MonoBehaviour
 
     private void AddPokemon(Pokemon pokemon)
     {
-        pokemon.OnCollected += PokemonCollectedHandler;
+        // pokemon.OnCollected += PokemonCollectedHandler;
         _pokemons.Add(pokemon);
     }
 
     private void RemovePokemon(Pokemon pokemon)
     {
-        pokemon.OnCollected -= PokemonCollectedHandler;
+        // pokemon.OnCollected -= PokemonCollectedHandler;
         _pokemons.Remove(pokemon);
         Destroy(pokemon.gameObject);
     }

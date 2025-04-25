@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     // public UiManager UiManager { get; private set; }
-    // public AudioManager AudioManager { get; private set; }
+    public AudioManager AudioManager { get; private set; }
     // public ScoreManager ScoreManager { get; private set; }
     // public TimeManager TimeManager { get; private set; }
     public PokemonManager PokemonManager { get; private set; }
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         else if (Instance != this) Destroy(gameObject);
 
         // UiManager = GetComponent<UiManager>();
-        // AudioManager = GetComponent<AudioManager>();
+        AudioManager = GetComponent<AudioManager>();
         // ScoreManager = GetComponent<ScoreManager>();
         // TimeManager = GetComponent<TimeManager>();
         PokemonManager = GetComponent<PokemonManager>();
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         // TimeManager.OnTimeUp += TimeUpHandler;
 
         // UiManager.StartGame();
-        // AudioManager.StartGame();
+        AudioManager.StartGame();
         // ScoreManager.StartGame();
         // TimeManager.StartGame();
         PokemonManager.StartGame();
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         // TimeManager.OnTimeUp -= TimeUpHandler;
 
         // UiManager.StopGame();
-        // AudioManager.StopGame();
+        AudioManager.StopGame();
         // ScoreManager.StopGame();
         // TimeManager.StopGame();
         PokemonManager.StopGame();
