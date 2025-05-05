@@ -2,22 +2,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player")]
+    [Header("Player Settings")]
     public float Speed = 5f;
+    public AudioClip ThrowSound;
 
-    [Header("Pokeball")]
+    [Header("Pokeball Settings")]
     public Pokeball PokeballPrefab;
-    public float PokeballSpeed = 10f;
+    public Transform container;
 
     // Propriétés
-    private Animator Animator { get; set; }
     public Rigidbody2D Rigidbody { get; private set; }
+    private Animator Animator { get; set; }
+    private AudioSource AudioSource { get; set; }
     private Vector2 Movement { get; set; }
 
     private void Awake()
     {
         this.Animator = GetComponent<Animator>();
         this.Rigidbody = GetComponent<Rigidbody2D>();
+        this.AudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +51,13 @@ public class Player : MonoBehaviour
 
         Vector2 direction = (mousePosition - transform.position).normalized;
         Pokeball pokeball = Instantiate(this.PokeballPrefab, transform.position, Quaternion.identity);
-        pokeball.Rigidbody.linearVelocity = direction * this.PokeballSpeed;
+        pokeball.transform.parent = container;
+        pokeball.Rigidbody.linearVelocity = direction * pokeball.Speed;
+
+        // 🔊 Joue le son
+        if (this.ThrowSound != null && this.AudioSource != null)
+        {
+            this.AudioSource.PlayOneShot(this.ThrowSound);
+        }
     }
 }

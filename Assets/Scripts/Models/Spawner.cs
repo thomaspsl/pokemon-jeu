@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Mouvement")]
+    [Header("Spawner Settings")]
     public float Speed = 5f;
 
     // Propriétés

@@ -3,33 +3,37 @@ using UnityEngine;
 
 public class Pokeball : MonoBehaviour
 {
-    [Header("Pokemon")]
-    public Color capturedColor = Color.gray;
-
-    // Propriétés
+    [Header("Pokeball Settings")]
+    public float Speed { get; set; } = 10f;
+    public AudioClip ShakeSound;
+    public AudioClip CatchSound;
+    public AudioClip OutSound;
+    public Rigidbody2D Rigidbody { get; private set; }
+    private Color capturedColor { get; set; } = Color.gray;
     private CapsuleCollider2D Collider { get; set; }
     private SpriteRenderer SpriteRenderer { get; set; }
-    public Rigidbody2D Rigidbody { get; private set; }
+    private AudioSource AudioSource { get; set; }
 
     private void Awake()
     {
-        this.Collider = GetComponent<CapsuleCollider2D>();
-        this.SpriteRenderer = GetComponent<SpriteRenderer>();
-        this.Rigidbody = GetComponent<Rigidbody2D>();
+        Collider = GetComponent<CapsuleCollider2D>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        Rigidbody = GetComponent<Rigidbody2D>();
+        AudioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (this.Rigidbody != null) this.Rigidbody.linearVelocity = Vector2.zero;
+        if (Rigidbody != null) Rigidbody.linearVelocity = Vector2.zero;
 
         if (other.gameObject.CompareTag("Pokemon"))
         {
             Pokemon pokemon = other.gameObject.GetComponent<Pokemon>();
 
-            // Déjà entrain de se faire capturer
-            if (pokemon.IsBeingCaptured) { 
-                Destroy(gameObject); 
-                return; 
+            if (pokemon.IsBeingCaptured)
+            {
+                Destroy(gameObject);
+                return;
             }
 
             pokemon.IsBeingCaptured = true;
@@ -45,36 +49,74 @@ public class Pokeball : MonoBehaviour
     {
         transform.position = pokemon.transform.position;
         pokemon.SpriteRenderer.enabled = false;
+
         if (pokemon.Rigidbody != null) pokemon.Rigidbody.bodyType = RigidbodyType2D.Static;
         if (pokemon.Collider != null) pokemon.Collider.enabled = false;
 
-        int tries = GenerateWeightedTry();
+        Collider.enabled = false;
 
-        this.Collider.enabled = false;
+        int roll = Random.Range(1, 101);
+        int shakes = CalculateShakes(roll, pokemon.Luck);
 
-        for (int i = 0; i < tries; i++)
+        if (shakes == 0)
         {
-            yield return StartCoroutine(Shake());
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            for (int i = 0; i < shakes; i++)
+            {
+                PlaySound(ShakeSound); // Shake sound
+                yield return StartCoroutine(Shake());
+            }
         }
 
-        if (tries == 3)
+        if (roll <= pokemon.Luck)
         {
-            Destroy(pokemon.gameObject);
             gameObject.layer = LayerMask.NameToLayer("Default");
-            this.SpriteRenderer.color = this.capturedColor;
+            SpriteRenderer.color = capturedColor;
+            PlaySound(CatchSound); // Capture réussie
+            pokemon.Collect();
             yield return StartCoroutine(FadeOutAndDestroy());
         }
         else
         {
-            Destroy(gameObject);
+            PlaySound(OutSound); // Pokémon s’échappe après shakes
+
+            // Désactivation visuelle et physique
+            if (SpriteRenderer != null) SpriteRenderer.enabled = false;
+            if (Collider != null) Collider.enabled = false;
+            if (Rigidbody != null)
+            {
+                Rigidbody.linearVelocity = Vector2.zero;
+                Rigidbody.bodyType = RigidbodyType2D.Kinematic; // empêche les interactions physiques
+            }
+
             pokemon.RestartMovement();
+
+            // Attend la fin du son
+            yield return new WaitForSeconds(OutSound.length);
+
+            Destroy(gameObject);
         }
+    }
+
+    private int CalculateShakes(int roll, int luck)
+    {
+        if (roll <= luck)
+            return 3;
+        else if (roll <= luck + 20)
+            return 2;
+        else if (roll <= luck + 40)
+            return 1;
+        else
+            return 0;
     }
 
     private IEnumerator Shake()
     {
-        Vector3 start = transform.position;
-        
+        Vector3 startPosition = transform.position;
+
         float duration = 0.2f;
         float elapsed = 0f;
         float shakeAmount = 0.1f;
@@ -82,13 +124,12 @@ public class Pokeball : MonoBehaviour
         while (elapsed < duration)
         {
             float offset = Mathf.Sin(elapsed * 30f) * shakeAmount;
-            transform.position = start + new Vector3(offset, 0, 0);
+            transform.position = startPosition + new Vector3(offset, 0, 0);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = start;
-
+        transform.position = startPosition;
         yield return new WaitForSeconds(0.3f);
     }
 
@@ -96,27 +137,26 @@ public class Pokeball : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        Color originalColor = this.SpriteRenderer.color;
+        Color originalColor = SpriteRenderer.color;
         float duration = 1.0f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
-            this.SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        this.SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
         Destroy(gameObject);
     }
 
-    private int GenerateWeightedTry()
+    private void PlaySound(AudioClip clip)
     {
-        float r = Random.value;
-        if (r < 0.25f) return 1;
-        else if (r < 0.50f) return 2;
-        else return 3;
+        if (clip != null && AudioSource != null)
+        {
+            AudioSource.PlayOneShot(clip);
+        }
     }
 }

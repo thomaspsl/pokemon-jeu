@@ -5,25 +5,33 @@ using System;
 
 public class PokemonManager : MonoBehaviour
 {
-    public Transform spawner;
-    public Transform container;
-    public float spawnDelay = 2f;
-    public List<Pokemon> pokemonList = new List<Pokemon>();
-
     private Coroutine _spawnRoutine;
-    public event Action<Pokemon> OnCollected;
     private List<Pokemon> _pokemons = new List<Pokemon>();
 
+    [Header("Pokemons Settings")]
+    public Transform spawner;
+    public Transform container;
+    public float spawnDelay = 1f;
+    public List<Pokemon> pokemonList = new List<Pokemon>();
+
+    // Événements
+    public event Action<Pokemon> OnCollected;
+
+    public void StartGame()
+    {
+        StartSpawning();
+    }
+    
     public void StartSpawning()
     {
         _spawnRoutine = StartCoroutine(SpawnRoutine());
     }
 
-    public void StopSpawning()
+    private IEnumerator SpawnRoutine()
     {
-        if (_spawnRoutine == null) return;
-        StopCoroutine(_spawnRoutine);
-        _spawnRoutine = null;
+        Spawn();
+        yield return new WaitForSeconds(spawnDelay);
+        StartSpawning();
     }
 
     private void Spawn()
@@ -34,24 +42,10 @@ public class PokemonManager : MonoBehaviour
         AddPokemon(pokemon);
     }
 
-    private IEnumerator SpawnRoutine()
-    {
-        Spawn();
-        yield return new WaitForSeconds(spawnDelay);
-        StartSpawning();
-    }
-
     private void AddPokemon(Pokemon pokemon)
     {
-        // pokemon.OnCollected += PokemonCollectedHandler;
+        pokemon.OnCollected += PokemonCollectedHandler;
         _pokemons.Add(pokemon);
-    }
-
-    private void RemovePokemon(Pokemon pokemon)
-    {
-        // pokemon.OnCollected -= PokemonCollectedHandler;
-        _pokemons.Remove(pokemon);
-        Destroy(pokemon.gameObject);
     }
 
     private void PokemonCollectedHandler(Pokemon pokemon)
@@ -60,20 +54,10 @@ public class PokemonManager : MonoBehaviour
         RemovePokemon(pokemon);
     }
 
-    // -- 
-
-    public void StartGame()
+    private void RemovePokemon(Pokemon pokemon)
     {
-        StartSpawning();
-    }
-
-    public void StopGame()
-    {
-        StopSpawning();
-
-        for (int i = _pokemons.Count - 1; i >= 0; i--)
-        {
-            RemovePokemon(_pokemons[i]);
-        }
+        pokemon.OnCollected -= PokemonCollectedHandler;
+        _pokemons.Remove(pokemon);
+        Destroy(pokemon.gameObject);
     }
 }
