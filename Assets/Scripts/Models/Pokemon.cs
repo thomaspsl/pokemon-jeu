@@ -4,9 +4,9 @@ using System;
 public class Pokemon : MonoBehaviour
 {
     [Header("Pokemon Settings")]
-    public int Luck = 50;
-    public float Speed = 5f;
-    public int Score = 100;
+    public int luck = 50;
+    public float speed = 5f;
+    public int score = 100;
 
     // Propriétés
     public bool IsBeingCaptured { get; set; }
@@ -18,51 +18,63 @@ public class Pokemon : MonoBehaviour
     // Événements
     public event Action<Pokemon> OnCollected;
 
+    /*
+    * Function to wake setup properties
+    */
     private void Awake()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        Collider = GetComponent<CapsuleCollider2D>();
-        Rigidbody = GetComponent<Rigidbody2D>();
-        Animator = GetComponent<Animator>();
+        this.SpriteRenderer = GetComponent<SpriteRenderer>();
+        this.Collider = GetComponent<CapsuleCollider2D>();
+        this.Rigidbody = GetComponent<Rigidbody2D>();
+        this.Animator = GetComponent<Animator>();
     }
 
+    /*
+    * Function to start movement
+    */
     private void Start()
     {
-        RestartMovement();
+        this.StartMovement();
     }
 
+    /*
+    * Function to update the animator of the pokemon
+    */
     private void Update()
     {
-        if (Animator != null && Rigidbody != null)
-        {
-            Vector2 velocity = Rigidbody.linearVelocity;
-            Animator.SetFloat("Horizontal", velocity.normalized.x);
-            Animator.SetFloat("Vertical", velocity.normalized.y);
-            Animator.SetFloat("Velocity", velocity.magnitude);
-        }
+        Vector2 movement = Rigidbody.linearVelocity.normalized;
+
+        this.Animator.SetFloat("Horizontal", movement.x);
+        this.Animator.SetFloat("Vertical", movement.y);
+        this.Animator.SetFloat("Velocity", movement.sqrMagnitude);
     }
 
-    public void RestartMovement()
+    /*
+    * Function to restart the movement of the pokemon
+    */
+    public void StartMovement()
     {
-        if (Rigidbody != null)
+        if (this.Rigidbody != null)
         {
-            Rigidbody.bodyType = RigidbodyType2D.Dynamic;
-            Rigidbody.linearVelocity = UnityEngine.Random.insideUnitCircle.normalized * Speed;
+            this.Rigidbody.bodyType = RigidbodyType2D.Dynamic;
+            this.Rigidbody.linearVelocity = UnityEngine.Random.insideUnitCircle.normalized * this.speed;
         }
 
-        if (Collider != null) Collider.enabled = true;
-        if (SpriteRenderer != null) SpriteRenderer.enabled = true;
+        if (this.Collider != null) this.Collider.enabled = true;
+        if (this.SpriteRenderer != null) this.SpriteRenderer.enabled = true;
 
-        IsBeingCaptured = false;
+        this.IsBeingCaptured = false;
     }
 
+    /*
+    * Function to setup the collect state
+    */
     public void Collect()
     {
-        // Actions effectuées au moment de la capture
-        if (SpriteRenderer != null) SpriteRenderer.enabled = false;
-        if (Collider != null) Collider.enabled = false;
-        if (Rigidbody != null) Rigidbody.bodyType = RigidbodyType2D.Static;
+        if (this.SpriteRenderer != null) this.SpriteRenderer.enabled = false;
+        if (this.Collider != null) this.Collider.enabled = false;
+        if (this.Rigidbody != null) this.Rigidbody.bodyType = RigidbodyType2D.Static;
 
-        OnCollected?.Invoke(this);
+        this.OnCollected?.Invoke(this);
     }
 }

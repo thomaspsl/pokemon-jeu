@@ -5,35 +5,49 @@ using System;
 
 public class PokemonManager : MonoBehaviour
 {
-    private Coroutine _spawnRoutine;
-    private List<Pokemon> _pokemons = new List<Pokemon>();
+    private Coroutine spawnRoutine;
+    private List<Pokemon> pokemons = new List<Pokemon>();
 
-    [Header("Pokemons Settings")]
+    [Header("Spawner Settings")]
     public Transform spawner;
-    public Transform container;
-    public float spawnDelay = 1f;
+    public float spawnDelay = 0.5f;
+
+    [Header("Pokemon Settings")]
     public List<Pokemon> pokemonList = new List<Pokemon>();
+    public Transform container;
 
     // Événements
     public event Action<Pokemon> OnCollected;
 
-    public void StartGame()
+    /*
+    * Function to start the gameplay
+    */
+    public void StartGameplay()
     {
-        StartSpawning();
+        this.StartSpawning();
     }
     
+    /*
+    * Function to start spawning pokemons
+    */
     public void StartSpawning()
     {
-        _spawnRoutine = StartCoroutine(SpawnRoutine());
+        this.spawnRoutine = StartCoroutine(this.SpawnRoutine());
     }
 
+    /*
+    * Routine to spawn pokemons
+    */
     private IEnumerator SpawnRoutine()
     {
-        Spawn();
+        this.Spawn();
         yield return new WaitForSeconds(spawnDelay);
-        StartSpawning();
+        this.StartSpawning();
     }
 
+    /*
+    * Function to spawn a pokemon
+    */
     private void Spawn()
     {
         var prefab = pokemonList[UnityEngine.Random.Range(0, pokemonList.Count)];
@@ -42,22 +56,47 @@ public class PokemonManager : MonoBehaviour
         AddPokemon(pokemon);
     }
 
+    /*
+    * Function to add a pokemon to the list
+    */
     private void AddPokemon(Pokemon pokemon)
     {
-        pokemon.OnCollected += PokemonCollectedHandler;
-        _pokemons.Add(pokemon);
+        pokemon.OnCollected += this.PokemonCollectedHandler;
+        this.pokemons.Add(pokemon);
     }
 
+    /*
+    * Function to handle the pokemon collection
+    */
     private void PokemonCollectedHandler(Pokemon pokemon)
     {
-        OnCollected?.Invoke(pokemon);
+        this.OnCollected?.Invoke(pokemon);
         RemovePokemon(pokemon);
     }
 
+    /*
+    * Function to remove a pokemon from the list
+    */
     private void RemovePokemon(Pokemon pokemon)
     {
-        pokemon.OnCollected -= PokemonCollectedHandler;
-        _pokemons.Remove(pokemon);
+        pokemon.OnCollected -= this.PokemonCollectedHandler;
+        this.pokemons.Remove(pokemon);
         Destroy(pokemon.gameObject);
+    }
+
+    /*
+    * Function to stop the gameplay
+    */
+    public void StopGameplay()
+    {
+        StopCoroutine(this.spawnRoutine);
+        this.spawnRoutine = null;
+
+        foreach (var pokemon in this.pokemons)
+        {
+            pokemon.OnCollected -= this.PokemonCollectedHandler;
+            Destroy(pokemon.gameObject);
+        }
+        this.pokemons.Clear();
     }
 }

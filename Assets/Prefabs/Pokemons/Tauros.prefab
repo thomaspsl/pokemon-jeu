@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b5692e5f2904d7b84a5f8f3cd25e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Luck: 20
+  Luck: 3
   Speed: 3
   Score: 100
 --- !u!95 &4012203194991227718

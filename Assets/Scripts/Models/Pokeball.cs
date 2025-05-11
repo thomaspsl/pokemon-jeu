@@ -4,27 +4,36 @@ using UnityEngine;
 public class Pokeball : MonoBehaviour
 {
     [Header("Pokeball Settings")]
-    public float Speed { get; set; } = 10f;
-    public AudioClip ShakeSound;
-    public AudioClip CatchSound;
-    public AudioClip OutSound;
+    public float bonus = 0f;
+    public float speed = 10f;
+
+    // Propriétés
     public Rigidbody2D Rigidbody { get; private set; }
+
+    private GameManager Game { get; set; }
     private Color capturedColor { get; set; } = Color.gray;
     private CapsuleCollider2D Collider { get; set; }
     private SpriteRenderer SpriteRenderer { get; set; }
     private AudioSource AudioSource { get; set; }
 
+    /*
+    * Function to wake setup properties
+    */
     private void Awake()
     {
-        Collider = GetComponent<CapsuleCollider2D>();
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        Rigidbody = GetComponent<Rigidbody2D>();
-        AudioSource = GetComponent<AudioSource>();
+        this.Game = GameManager.Instance;
+        this.Collider = GetComponent<CapsuleCollider2D>();
+        this.SpriteRenderer = GetComponent<SpriteRenderer>();
+        this.Rigidbody = GetComponent<Rigidbody2D>();
+        this.AudioSource = GetComponent<AudioSource>();
     }
 
+    /*
+    * Function to check the collision with the pokemon
+    */
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (Rigidbody != null) Rigidbody.linearVelocity = Vector2.zero;
+        if (this.Rigidbody != null) this.Rigidbody.linearVelocity = Vector2.zero;
 
         if (other.gameObject.CompareTag("Pokemon"))
         {
@@ -32,7 +41,7 @@ public class Pokeball : MonoBehaviour
 
             if (pokemon.IsBeingCaptured)
             {
-                Destroy(gameObject);
+                this.Game.PokeballManager.RemovePokeball(this);
                 return;
             }
 
@@ -41,10 +50,13 @@ public class Pokeball : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            this.Game.PokeballManager.RemovePokeball(this);
         }
     }
 
+    /*
+    * Function to create the capture animation
+    */
     private IEnumerator CaptureAnimation(Pokemon pokemon)
     {
         transform.position = pokemon.transform.position;
@@ -56,7 +68,8 @@ public class Pokeball : MonoBehaviour
         Collider.enabled = false;
 
         int roll = Random.Range(1, 101);
-        int shakes = CalculateShakes(roll, pokemon.Luck);
+        float totalLuck = pokemon.luck + this.bonus;
+        int shakes = CalculateShakes(roll, totalLuck);
 
         if (shakes == 0)
         {
@@ -66,53 +79,52 @@ public class Pokeball : MonoBehaviour
         {
             for (int i = 0; i < shakes; i++)
             {
-                PlaySound(ShakeSound); // Shake sound
+                AudioManager.Play(this.AudioSource, this.Game.PokeballManager.shakeSound);
                 yield return StartCoroutine(Shake());
             }
         }
 
-        if (roll <= pokemon.Luck)
+        if (roll <= totalLuck)
         {
             gameObject.layer = LayerMask.NameToLayer("Default");
-            SpriteRenderer.color = capturedColor;
-            PlaySound(CatchSound); // Capture réussie
+            this.SpriteRenderer.color = this.capturedColor;
+            AudioManager.Play(this.AudioSource, this.Game.PokeballManager.catchSound);
             pokemon.Collect();
             yield return StartCoroutine(FadeOutAndDestroy());
         }
         else
         {
-            PlaySound(OutSound); // Pokémon s’échappe après shakes
-
-            // Désactivation visuelle et physique
-            if (SpriteRenderer != null) SpriteRenderer.enabled = false;
-            if (Collider != null) Collider.enabled = false;
-            if (Rigidbody != null)
+            AudioManager.Play(this.AudioSource, this.Game.PokeballManager.outSound);
+            
+            if (this.SpriteRenderer != null) this.SpriteRenderer.enabled = false;
+            if (this.Collider != null) this.Collider.enabled = false;
+            if (this.Rigidbody != null)
             {
-                Rigidbody.linearVelocity = Vector2.zero;
-                Rigidbody.bodyType = RigidbodyType2D.Kinematic; // empêche les interactions physiques
+                this.Rigidbody.linearVelocity = Vector2.zero;
+                this.Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             }
 
-            pokemon.RestartMovement();
+            pokemon.StartMovement();
 
-            // Attend la fin du son
-            yield return new WaitForSeconds(OutSound.length);
-
-            Destroy(gameObject);
+            yield return new WaitForSeconds(this.Game.PokeballManager.outSound.length);
+            this.Game.PokeballManager.RemovePokeball(this);
         }
     }
 
-    private int CalculateShakes(int roll, int luck)
+    /*
+    * Function to calculate the number of shakes
+    */
+    private int CalculateShakes(int roll, float totalLuck)
     {
-        if (roll <= luck)
-            return 3;
-        else if (roll <= luck + 20)
-            return 2;
-        else if (roll <= luck + 40)
-            return 1;
-        else
-            return 0;
+        if (roll <= totalLuck) return 3;
+        else if (roll <= totalLuck + 20) return 2;
+        else if (roll <= totalLuck + 40) return 1;
+        else return 0;
     }
 
+    /*
+    * Function to skake the pokeball
+    */
     private IEnumerator Shake()
     {
         Vector3 startPosition = transform.position;
@@ -133,30 +145,25 @@ public class Pokeball : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
     }
 
+    /*
+    * Function to fade out the pokeball and destroy it
+    */
     private IEnumerator FadeOutAndDestroy()
     {
         yield return new WaitForSeconds(1f);
 
-        Color originalColor = SpriteRenderer.color;
+        Color originalColor = this.SpriteRenderer.color;
         float duration = 1.0f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
-            SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            this.SpriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        Destroy(gameObject);
-    }
-
-    private void PlaySound(AudioClip clip)
-    {
-        if (clip != null && AudioSource != null)
-        {
-            AudioSource.PlayOneShot(clip);
-        }
+        this.Game.PokeballManager.RemovePokeball(this);
     }
 }

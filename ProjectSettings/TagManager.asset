@@ -18,7 +18,7 @@ TagManager:
   - Pokemon
   - Pokeball
   - Spawner
-  - 
+  - Border
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2716353865
+    locked: 0
+  - name: Floors
+    uniqueID: 1889757947
     locked: 0
   - name: Default
     uniqueID: 0

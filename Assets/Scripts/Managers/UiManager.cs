@@ -1,34 +1,88 @@
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
 
 public class UiManager : MonoBehaviour
 {
-    private GameManager _gm;
+    [Header("Game Settings")]
+    public GameObject gameUI;
 
-    [Header("Ui Settings")]
+    [Header("Gameplay Settings")]
+    public GameObject gameplay;
+    public GameObject gameplayUI;
     public Text score;
     public Text time;
+    public Transform inventory;
+    public GameObject slotPrefab;
 
+    [Header("Endgame Settings")]
+    public GameObject endgameUI;
+    public Text finalScore;
+
+    // Propriétés
+    private GameManager Game { get; set; }
+
+    /*
+    * Function to wake managers 
+    */
     private void Awake()
     {
-        _gm = GameManager.Instance;
+        this.Game = GameManager.Instance;
     }
 
-    void Update()
-    {   
-        score.text = $"Score: <color=#feae34>{_gm.ScoreManager.Score}</color>";
-        time.text = $"{TimeSpan.FromSeconds(_gm.TimeManager.Remaining):mm\\:ss}";
-    }
-
-    // public void StartGame()
-    // {
-    //     SceneManager.LoadScene("GameScene");
-    // }
-
-    public void Quit()
+    public void isGameplayUI()
     {
-        Debug.Log("Quit");
-        Application.Quit();
+        this.gameplayUI.SetActive(true);
+    }
+
+    /*
+    * Function to update the HUD
+    */
+    private void Update()
+    {
+        if (this.gameplayUI.activeSelf) 
+        {
+            score.text = $"Score: <color=#feae34>{this.Game.ScoreManager.Score}</color>";
+            time.text = $"{TimeSpan.FromSeconds(this.Game.TimeManager.Remaining):mm\\:ss}";
+        }
+
+        if (this.endgameUI.activeSelf) 
+        {
+            finalScore.text = $"Score: <color=#feae34>{this.Game.ScoreManager.Score}</color>";
+        }
+    }
+
+    /*
+    * Function to start the game
+    */
+    public void StartGame()
+    {
+        endgameUI.SetActive(false);
+        gameplay.SetActive(false);
+        gameplayUI.SetActive(false);
+        gameUI.SetActive(true);
+    }
+
+    /*
+    * Function to start the gameplay
+    */
+    public void StartGameplay()
+    {
+        endgameUI.SetActive(false);
+        gameUI.SetActive(false);
+        gameplay.SetActive(true);
+        gameplayUI.SetActive(true);
+    }
+    
+    /*
+    * Function to stop the gameplay
+    */
+    public void StopGameplay()
+    {
+        gameUI.SetActive(false);
+        gameplay.SetActive(false);
+        gameplayUI.SetActive(false);
+        endgameUI.SetActive(true);
     }
 }

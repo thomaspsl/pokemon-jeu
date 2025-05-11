@@ -3,8 +3,6 @@ using System;
 
 public class TimeManager : MonoBehaviour
 {
-    private GameManager _gm;
-
     [Header("Time Settings")]
     public float duration = 60f;
 
@@ -15,28 +13,42 @@ public class TimeManager : MonoBehaviour
     // Événements
     public event Action OnTimeUp;
 
+    /*
+    * Update the rest of the time
+    */
     public void Update()
     {
-        if(Running)
-        {
-            Tick(Time.deltaTime);
-        }
+        if(this.Running) this.Tick(Time.deltaTime);
     }
 
+    /*
+    * Function all every second
+    */
     private void Tick(float deltaTime)
     {
-        Remaining -= deltaTime;
+        this.Remaining -= deltaTime;
 
-        if (Remaining <= 0f)
+        if (this.Remaining <= 0f)
         {
-            Remaining = 0f;
-            OnTimeUp?.Invoke();
+            this.Remaining = 0f;
+            this.OnTimeUp?.Invoke();
         }
     }
 
-    public void StartGame()
+    /*
+    * Function to start the gameplay
+    */
+    public void StartGameplay()
     {
-        Remaining = duration;
-        Running = true;
+        this.Running = true;
+        this.Remaining = this.duration;
+    }
+
+    /*
+    * Function to stop the gameplay
+    */
+    public void StopGameplay()
+    {
+        this.Running = false;
     }
 }
