@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b5692e5f2904d7b84a5f8f3cd25e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Luck: 85
-  Speed: 10
-  Score: 80
+  luck: 60
+  speed: 5
+  score: 75
 --- !u!95 &6437887791997432934
 Animator:
   serializedVersion: 7
