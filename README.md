@@ -1,10 +1,10 @@
 <div align='center'>
   
-  [<img src='https://github.com/user-attachments/assets/30639cc1-df5d-4e06-962b-611400852b9c' alt='Pekamon' height='150' style='margin: 20px'>](https://thomaspsl.itch.io/pekamon)
+  [<img src='https://github.com/user-attachments/assets/6f8ff727-6925-4cf6-bc38-817539f511db' alt='Pekamon' height='150' style='margin: 20px'>](https://thomaspsl.itch.io/pekamon)
 
   # Pekamon Project
 
-  #### It's a video [game](https://thomaspsl.itch.io/pekamon) ..., built with [Unity](https://unity.com).
+  #### It's a video [game](https://thomaspsl.itch.io/pekamon) inspired by Pokémon univers, built with [Unity](https://unity.com).
 
   [![Unity](https://img.shields.io/badge/Unity-6.2-939495)](https://unity.com)
 
@@ -14,7 +14,7 @@
 
   [Contributors](#-contributors) • [Description](#-description) • [How To Use](#-how-to-use) • [Key Features](#-key-features) • [Credits](#-credits) • [Support](#-support) • [License](#-license)
 
-  <!-- ![Pekamon](https://github.com/user-attachments/assets/de2eb64b-bb17-4aad-a8ab-efcb639e9bbb) -->
+  ![Pekamon](https://github.com/user-attachments/assets/6dd5566b-a06c-451d-8c76-cd294b26acc6)
 
 </div>
 
