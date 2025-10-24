@@ -2,7 +2,7 @@
   
   [<img src='https://github.com/user-attachments/assets/6f8ff727-6925-4cf6-bc38-817539f511db' alt='Pekamon' height='150' style='margin: 20px'>](https://thomaspsl.itch.io/pekamon)
 
-  # Pekamon Project
+  # Pékamon Project
 
   #### It's a video [game](https://thomaspsl.itch.io/pekamon) inspired by Pokémon univers, built with [Unity](https://unity.com).
 
